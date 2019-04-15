@@ -15,22 +15,26 @@ class StatefulState extends State<Stateful> {
 
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.green),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primaryColor: Colors.white),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Stateful App',
-              style: TextStyle(color: Colors.white, fontSize: 30.0)),
+              style: TextStyle(color: Colors.pink, fontSize: 30.0)),
           centerTitle: true,
         ),
         body: Center(
           child: IconButton(
+            iconSize: 100,
             icon: _alreadySaved
                 ? Icon(
                     Icons.favorite,
-                
                     color: Colors.yellow,
                   )
-                : Icon(Icons.favorite, color: Colors.pink),
+                : Icon(
+                    Icons.favorite,
+                    color: Colors.pink,
+                  ),
             onPressed: () {
               _alreadySaved = !_alreadySaved;
               setState(() {});
